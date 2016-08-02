@@ -61,6 +61,12 @@
     end
   end
 
+  def search
+    @tasks = Task.where("name like '%#{params["search"]["name"]}%'")
+    @word = params["search"]["name"] 
+    render :index
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_task
@@ -72,3 +78,5 @@
       params.require(:task).permit(:due_date, :category_id, :name, :done, :user_id)
     end
 end
+
+
