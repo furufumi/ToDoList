@@ -21,12 +21,12 @@ ActiveRecord::Schema.define(version: 20160802125626) do
 
   create_table "tasks", force: :cascade do |t|
     t.date     "due_date"
-    t.string   "catregory_id"
+    t.string   "category_id"
     t.string   "name"
     t.boolean  "done"
     t.string   "user_id"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "users", force: :cascade do |t|

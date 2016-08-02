@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>
+﻿<p id="notice"><%= notice %></p>
 
 <p>
   <strong>Due date:</strong>
@@ -6,8 +6,8 @@
 </p>
 
 <p>
-  <strong>Catregory:</strong>
-  <%= @task.catregory_id %>
+  <strong>Category:</strong>
+  <%= @task.category.categoryname %>
 </p>
 
 <p>
@@ -22,7 +22,7 @@
 
 <p>
   <strong>User:</strong>
-  <%= @task.user_id %>
+  <%= @task.user.username %>
 </p>
 
 <%= link_to 'Edit', edit_task_path(@task) %> |

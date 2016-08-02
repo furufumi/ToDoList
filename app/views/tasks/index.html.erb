@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>
+﻿<p id="notice"><%= notice %></p>
 
 <h1>Listing Tasks</h1>
 
@@ -8,7 +8,7 @@
       <th>Done</th>
       <th>Due date</th>
       <th>Name</th>
-      <th>Catregory</th>
+      <th>Category</th>
       <th>User</th>
       <th colspan="3"></th>
     </tr>
@@ -20,8 +20,8 @@
         <td><%= task.done %></td>
         <td><%= task.due_date %></td>
         <td><%= task.name %></td>
-        <td><%= task.catregory_id %></td>
-        <td><%= task.user_id %></td>
+        <td><%= task.category.categoryname %></td>
+        <td><%= task.user.username %></td>
         <td><%= link_to 'Show', task %></td>
         <td><%= link_to 'Edit', edit_task_path(task) %></td>
         <td><%= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
