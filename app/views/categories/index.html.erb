@@ -1,22 +1,24 @@
-<p id="notice"><%= notice %></p>
+﻿<p id="notice"><%= notice %></p>
+<center>
+<body style="border:double 300px #FFCC99;">
 
-<h1>Listing Categories</h1>
+<h1>カテゴリー一覧</h1>
 
 <table>
   <thead>
     <tr>
-      <th>Categoryname</th>
+      <th>カテゴリー名</th>
       <th colspan="3"></th>
     </tr>
   </thead>
 
-  <tbody>
+  <tbody >
     <% @categories.each do |category| %>
       <tr>
         <td><%= category.categoryname %></td>
-        <td><%= link_to 'Show', category %></td>
-        <td><%= link_to 'Edit', edit_category_path(category) %></td>
-        <td><%= link_to 'Destroy', category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to '詳細', category %></td>
+        <td><%= link_to '更新', edit_category_path(category) %></td>
+        <td><%= link_to '削除', category, method: :delete, data: { confirm: '本当に削除してよろしいですか?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -24,4 +26,5 @@
 
 <br>
 
-<%= link_to 'New Category', new_category_path %>
+<%= link_to 'カテゴリー登録', new_category_path %>
+</center>
