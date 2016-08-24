@@ -1,10 +1,11 @@
-﻿class TasksController < ApplicationController
+﻿#helper_method :sort_column, :sort_direction
+class TasksController < ApplicationController
   before_action :set_task, only: [:show, :edit, :update, :destroy]
 
   # GET /tasks
   # GET /tasks.json
   def index
-    @tasks = Task.all
+    @tasks = Task.all.order("due_date")
   end
 
   # GET /tasks/1
@@ -81,7 +82,6 @@
       @task = Task.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
     def task_params
       params.require(:task).permit(:due_date, :category_id, :name, :done, :user_id)
     end
